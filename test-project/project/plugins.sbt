@@ -1,0 +1,1 @@
+addSbtPlugin("com.joescii" % "webjar-locator-issue" % "0.1.0-SNAPSHOT")

@@ -15,8 +15,8 @@ val webjarLocatorVersion = settingKey[String]("Version of webjar locator")
 webjarLocatorVersion := "0.30"
 
 libraryDependencies ++= Seq(
-  "org.webjars"               %  "webjars-locator"  % webjarLocatorVersion.value  % "compile",
-  "org.webjars.bower"         %  "jasmine"          % jasmineVersion.value        % "runtime"
+  "org.webjars"               %  "webjars-locator"  % webjarLocatorVersion.value,
+  "org.webjars.bower"         %  "jasmine"          % jasmineVersion.value
 )
 
 // don't bother publishing javadoc
