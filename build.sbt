@@ -11,8 +11,12 @@ version := "0.1.0-SNAPSHOT"
 val jasmineVersion = settingKey[String]("Version of jasmine")
 jasmineVersion := "2.4.1"
 
+val webjarLocatorVersion = settingKey[String]("Version of webjar locator")
+webjarLocatorVersion := "0.30"
+
 libraryDependencies ++= Seq(
-  "org.webjars.bower"         %  "jasmine"          % jasmineVersion.value        % "provided"
+  "org.webjars"               %  "webjars-locator"  % webjarLocatorVersion.value  % "compile",
+  "org.webjars.bower"         %  "jasmine"          % jasmineVersion.value        % "runtime"
 )
 
 // don't bother publishing javadoc
