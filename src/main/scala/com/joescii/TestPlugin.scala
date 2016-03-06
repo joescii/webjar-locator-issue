@@ -19,4 +19,11 @@ object TestPlugin extends Plugin {
     IO.write(target / "jasmine.js", read(Jasmine.path))
     Seq(target / "jasmine.js")
   }
+
+  val writeHardcode = TaskKey[Seq[File]]("writeHardcode", "Writes webjar using hardcoded path")
+  val writeHardcodeTask = (streams, target in sbt.Compile).map { (s, target) =>
+    s.log.info("Writing webjar assets...")
+    IO.write(target / "jasmine.js", read("META-INF/resources/webjars/jasmine/2.4.1/lib/jasmine-core/jasmine.js"))
+    Seq(target / "jasmine.js")
+  }
 }

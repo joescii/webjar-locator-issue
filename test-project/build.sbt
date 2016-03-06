@@ -14,3 +14,5 @@ resolvers ++= Seq(
 )
 
 writeWebjars <<= writeWebjarsTask
+
+writeHardcode <<= writeHardcodeTask
