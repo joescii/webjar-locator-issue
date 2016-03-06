@@ -12,12 +12,14 @@ val jasmineVersion = settingKey[String]("Version of jasmine")
 jasmineVersion := "2.4.1"
 
 val webjarLocatorVersion = settingKey[String]("Version of webjar locator")
-webjarLocatorVersion := "0.30"
+webjarLocatorVersion := "0.31-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  "org.webjars"               %  "webjars-locator"  % webjarLocatorVersion.value,
-  "org.webjars.bower"         %  "jasmine"          % jasmineVersion.value
+  "org.webjars"               %  "webjars-locator-core"  % webjarLocatorVersion.value,
+  "org.webjars.bower"         %  "jasmine"               % jasmineVersion.value
 )
+
+resolvers += "Local Maven Repository" at Path.userHome.asFile.toURI.toURL + ".m2/repository"
 
 // don't bother publishing javadoc
 publishArtifact in (Compile, packageDoc) := false
